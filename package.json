@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .ts --fix src",
-    "format": "eslint src/**/*.ts --fix",
-    "build": "npm run lint && tsc && npm run format ",
+    "lint": "npx eslint src/**/*.ts --fix",
+    "format": "npx eslint src/**/*.ts --fix",
+    "build": "npm run lint && tsc && npm run format",
     "start:prod": "nodemon dist/index.js",
     "prod:build": "npm i && npm run build && npm run prisma:generate && npm run db:push",
     "prisma:generate": "npx prisma generate",
@@ -21,14 +21,17 @@
   "description": "",
   "dependencies": {
     "@prisma/client": "^5.14.0",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "nodemon": "^3.1.0",
     "prisma": "^5.14.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.3.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
